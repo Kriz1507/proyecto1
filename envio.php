@@ -1,10 +1,11 @@
 <?php
-    $host="localhost";
-    $user="root";
-    $password="";
-    $db="academia";
+    $host = getenv("MYSQLHOST");
+    $user = getenv("MYSQLUSER");
+    $password = getenv("MYSQLPASSWORD");
+    $db = getenv("MYSQLDATABASE");
+    $port = getenv("MYSQLPORT");
 
-    $con=mysqli_connect($host, $user, $password, $db)or die("Problemas al conectar"); 
+    $con=mysqli_connect($host, $user, $password, $db, $host)or die("Problemas al conectar"); 
         mysqli_select_db($con,$db);
 
     //TRABAJANDO CON LAS VARIABLES
@@ -12,7 +13,7 @@
     $direction=$_POST["direction"];
     $correo=$_POST["correo"];
     $comentarios=$_POST["comentarios"];
-    $sql="INSERT INTO datos VALUES ('$nombres','$direction','$correo','$comentarios')";
+    $sql="INSERT INTO datos VALUES (NULL,'$nombres','$direction','$correo','$comentarios')";
     $ejecutar=mysqli_query($con,$sql);
 
     //USAMOS LAS CONDICIONES
