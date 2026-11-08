@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <title>Academia Triunfadores</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="css/galeria.css">
+
+        <!-- Bootstrap CSS v5.3.8 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"/>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">    
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="img/logo.png" alt="" width="80px"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link " href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="galeria.html">Galeria</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Servicios
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                        <li><a class="dropdown-item" href="login.html">Login</a></li>
+                        <li><a class="dropdown-item" href="contactos.html">Contactos</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="my-5">
+            <h2 class="text-center mt-5 pt-5">NUESTRA GALERIA</h2>
+            <section>
+                <img src="galeria/img00.jpg" alt="" class="img-galeria">
+                <img src="galeria/img01.jpg" alt="" class="img-galeria">
+                <img src="galeria/img02.jpg" alt="" class="img-galeria">
+                <img src="galeria/img03.jpg" alt="" class="img-galeria">
+                <img src="galeria/img04.jpg" alt="" class="img-galeria">
+                <img src="galeria/img05.jpg" alt="" class="img-galeria">
+                <img src="galeria/img06.jpg" alt="" class="img-galeria">
+                <img src="galeria/img07.jpg" alt="" class="img-galeria">
+            <!--
+                <div class="modelo">
+                    <img src="galeria/img00.jpg" alt="" class="img-modelo">
+                    <div class="cerrar">
+                        X
+                    </div>
+                </div>
+             -->
+            </section>
+        </main>
+
+        <div class="social bd-dark py-5">
+            <div class="redes txt-white text-center" style="font-size: 30px;">
+                <i class="bi bi-facebook m-3"></i>
+                <i class="bi bi-instagram m-3"></i>
+                <i class="bi bi-youtube m-3"></i>
+                <i class="bi bi-twitter m-3"></i>
+            </div>
+        </div>
+
+        <footer class="bg-dark text-white py-3">
+            <div class="container">
+                <p class="text-center">Todos los Derechos Reservados &copy; a Roman Fernadez Kristian.</p>
+            </div>
+        </footer>
+        <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+        <script>
+            /*MOSTRAR GALERIA*/
+            $(".img-galeria").click(function(a){
+                let img=a.target.src;
+                let modelo='<div class="modelo"><img src=" '+img+' " alt="" class="img-modelo"><div class="cerrar">X</div></div>';
+            $("body, html").append(modelo);
+            
+            /*BOTON CERRAR*/
+            $(".cerrar").click(function(){
+                $(".modelo").remove();
+            })
+
+            /*CERRAR CON TECLA ESCAPE*/
+            $("body, html").keyup(function(e){
+                if(e.which==27){
+                    $(".modelo").remove();
+                }
+            })
+        });
+
+            
+        </script>
+    </body>
+</html>
