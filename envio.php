@@ -13,7 +13,7 @@
     $direction=$_POST["direction"];
     $correo=$_POST["correo"];
     $comentarios=$_POST["comentarios"];
-    $sql="INSERT INTO datos VALUES (NULL,'$nombres','$direction','$correo','$comentarios')";
+    $sql="INSERT INTO datos (nombres, direction, correo, comentarios) VALUES ('$nombres','$direction','$correo','$comentarios')";
     $ejecutar=mysqli_query($con,$sql);
 
     //USAMOS LAS CONDICIONES
