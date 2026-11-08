@@ -1,10 +1,11 @@
 <?php
-$host="localhost";
-    $user="root";
-    $password="";
-    $db="academia";
+    $host = getenv("MYSQLHOST");
+    $user = getenv("MYSQLUSER");
+    $password = getenv("MYSQLPASSWORD");
+    $db = getenv("MYSQLDATABASE");
+    $port = getenv("MYSQLPORT");
 
-    $con=mysqli_connect($host, $user, $password, $db)or die("Problemas al conectar"); 
+    $con=mysqli_connect($host, $user, $password, $db, $port)or die("Problemas al conectar"); 
         mysqli_select_db($con,$db);
 
     //TRABAJANDO CON LOS VARIABLES
